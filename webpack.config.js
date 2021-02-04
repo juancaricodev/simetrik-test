@@ -1,4 +1,5 @@
 const path = require('path')
+
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 
 module.exports = {
@@ -9,9 +10,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
-		alias: {
-			'@components': path.resolve(__dirname, 'src/components')
-		}
+    alias: {
+      '@components': path.resolve(__dirname, 'src/components')
+    }
   },
   module: {
     rules: [
@@ -38,10 +39,10 @@ module.exports = {
       filename: './index.html'
     })
   ],
-	devServer: {
-		contentBase: path.join(__dirname, 'dist'),
-		compress: true,
-		historyApiFallback: true,
-		port: 3000
-	}
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    historyApiFallback: true,
+    port: 3000
+  }
 }
