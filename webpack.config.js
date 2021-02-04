@@ -12,7 +12,9 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
-      '@components': path.resolve(__dirname, 'src/components')
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@styles': path.resolve(__dirname, 'src/assets/styles/components/'),
+      '@fonts': path.resolve(__dirname, 'src/assets/fonts/')
     }
   },
   module: {
@@ -39,7 +41,12 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader
           },
           'css-loader',
-          'sass-loader'
+          {
+            loader: 'sass-loader',
+            options: {
+              additionalData: '@import "src/assets/styles/global.scss";'
+            }
+          }
         ]
       }
     ]
