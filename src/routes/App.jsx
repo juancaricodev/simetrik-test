@@ -1,12 +1,12 @@
 import React from 'react'
 
-import '@styles/App.scss'
+import Home from '@components/Home'
 
 const App = () => {
   return (
-    <div className='App'>
-      Hello World!
-    </div>
+    <>
+      <Home />
+    </>
   )
 }
 
