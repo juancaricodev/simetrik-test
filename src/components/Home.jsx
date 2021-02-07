@@ -7,19 +7,25 @@ const Home = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(searchRef.current)
+
+    const searchField = new FormData(searchRef.current)
+    const data = searchField.get('search')
+
+    console.log(data)
   }
 
   return (
     <div className='home'>
       <h1>Search</h1>
 
-      <form className='home__searchbar' ref={searchRef}>
+      <form className='home__searchbar' ref={searchRef} onSubmit={handleSubmit}>
         <input type='text' name='search' />
-        <button type='submit' onSubmit={handleSubmit}>Search</button>
+        <button type='submit'>Search</button>
       </form>
 
-      {/* <div className='result'></div> */}
+      {/* <div className='result'>
+        {data?.field}
+      </div> */}
     </div>
   )
 }
